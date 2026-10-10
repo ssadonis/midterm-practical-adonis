@@ -1,0 +1,171 @@
+
+/* DESIGN TOKENS */
+:root {
+    --navy: #142744;
+    --dark: #0C192D;
+    --white: #FFFFFF;
+    --light: #30558d;
+    --text: #233652;
+    --space: 20px;
+    --font: Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    color: var(--navy);
+}
+
+section {
+    padding: 40px var(--space);
+    text-align: center;
+}
+
+header, footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: var(--space);
+}
+
+header img {
+    width: 90px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+nav a, footer a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 6px;
+}
+
+nav a:hover, nav a:focus-visible,
+footer a:hover, footer a:focus-visible {
+    color: #BFD4F2;
+    outline: 2px solid #BFD4F2;
+}
+
+button, a[href="#collection"] {
+    background: var(--navy);
+    color: var(--white);
+    border: 0;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover, button:focus-visible,
+a[href="#collection"]:hover,
+a[href="#collection"]:focus-visible {
+    background: var(--dark);
+    outline: 2px solid #8BA7CF;
+}
+
+#home {
+    background: var(--light);
+}
+
+#collection {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    background: #E8EDF4;
+}
+
+#collection h2 {
+    grid-column: 1 / -1;
+}
+
+article {
+    width: 100%;
+    max-width: 350px;
+    padding: var(--space);
+    margin: 10px;
+    background: var(--white);
+    border-radius: 8px;
+}
+
+article img {
+    width: 300px;
+}
+
+article:hover {
+    box-shadow: 0 4px 12px #BCC8D8;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #CCD4E0;
+    padding: 10px;
+}
+
+th {
+    background: var(--navy);
+    color: var(--white);
+}
+
+#about {
+    background: var(--light);
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+    text-align: left;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #8794A7;
+    border-radius: 4px;
+}
+
+input:focus-visible, textarea:focus-visible {
+    outline: 3px solid #8BA7CF;
+}
+
+@media (min-width: 600px) {
+    #collection {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    #collection {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
